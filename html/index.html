@@ -1,23 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> ToDoApp </title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Todo App</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="app-container">
-        <header class="app-header">
-            <h1><i class="fa-solid fa-list-check"></i>Task Flow</h1>
-            <p>Stay Organized and Productive</p>
 
-        </header>
-        
+  <div class="app-container">
+    <header class="app-header">
+
+        <div class="user-card">
+        <div class="user-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="user-info">
+          <h2>Hello, <span id="username-display">Ashutosh</span> 👋</h2>
+          <p id="user-greeting">You have <strong id="greeting-remaining">0</strong> tasks remaining today and <strong id="greeting-completed">0</strong> completed.</p>
+        </div>
+      </div>
+      <h1><i class="fa-solid fa-list-check"></i> Task Flow</h1>
+      <p>Stay organized and productive</p>
+    </header>
+
+    <!-- Task Counters Grid -->
+    <div class="counters-grid">
+      <div class="counter-card total">
+        <span class="counter-label">Total Tasks</span>
+        <span class="counter-value" id="count-total">0</span>
+      </div>
+      <div class="counter-card active">
+        <span class="counter-label">Active</span>
+        <span class="counter-value" id="count-active">0</span>
+      </div>
+      <div class="counter-card completed">
+        <span class="counter-label">Completed</span>
+        <span class="counter-value" id="count-completed">0</span>
+      </div>
     </div>
 
-    
+    <!-- Add Task Form -->
+    <form id="todo-form" class="todo-form">
+      <input type="text" id="todo-input" placeholder="What needs to be done?" autocomplete="off" required>
+      <button type="submit" id="add-btn">
+        <i class="fa-solid fa-plus"></i> Add Task
+      </button>
+    </form>
+
+    <!-- Task List -->
+    <ul id="todo-list" class="todo-list">
+      <!-- Tasks rendered here dynamically -->
+    </ul>
+
+    <!-- Empty State Message -->
+    <div id="empty-state" class="empty-state">
+      <i class="fa-regular fa-clipboard"></i>
+      <p>No tasks yet! Add one above to get started.</p>
+    </div>
+  </div>
+
+  <script src="../javascript/script.js"></script>
 </body>
 </html>
